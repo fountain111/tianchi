@@ -1,14 +1,21 @@
 class Bin:
-    def __init__(self):
-        self.capacity = 20
-
-        self.contents = []
+    def __init__(self,id,disk,cpu):
+        self.id = id
+        self.disk_capacity = disk
+        self.cpu_capacity = cpu
+        self.disk_contents = []
+        self.cpu_contents = []
 
     def put_item(self,weights):
         if (weights <= self.capacity) & (self.capacity!=0):
 
-            self.capacity -= weights
-            self.contents.append(weights)
+            self.disk_capacity -= weights['disk']
+            self.cpu_capacity -= weights['cpu']
+
+
+            self.cpu_contents.append(weights)['cpu']
+            self.disk_contents.append(weights)['disk']
+
             return self
         else:
             print('not enough space')
@@ -24,6 +31,11 @@ def first_fit(weights,bin):
         print('rest capacity and contents:',bin.capacity,bin.contents)
     return bin
 
+
+# CPU 50%,
+
+
+print(dict_.disk)
 
 weights = [1,3,4,19]
 
